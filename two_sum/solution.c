@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 int main(int argc, char* argv[]) {
-	int[] nums = [2,7,5,8];
+	int* nums = {2,7,5,8};
 	int numsSize = nums.length;
 	int target = 9;
-	int[] value = new int[2];
+	int* value = (int*)malloc(2*sizeof(int));
 	value = twoSum(nums, numsSize, target);
 	printf("%i,%i",value[0],value[1]);
+	free(value);
 }
 
 /**
